@@ -1,0 +1,25 @@
+<h2>Movies list</h2>
+<p>{{vm.msg}}</p>
+<table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <th>Movie Name</th>
+        <th>Ratings</th>
+        <td>rating icons</td>
+    </tr>
+    <tr ng-repeat="movie in vm.moviesList">
+        <td>{{movie.name}}</td>
+        <td>
+            <movie-rating-component value="movie.rating"></movie-rating-component>
+        </td>
+        <td>
+            <div class="pull-right">
+                <button ng-click="vm.incrementRating(movie)" class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+                <button ng-click="vm.decrementRating(movie)" class="btn btn-default">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+            </div>
+        </td>
+    </tr>
+</table>
